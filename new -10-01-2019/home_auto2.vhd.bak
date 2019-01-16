@@ -1,0 +1,104 @@
+
+-----------------------------------------------------------------------------------------------
+
+		
+	entity home_auto1 is port
+	(
+		lamp1 : out bit;
+		lamp2 : out bit;
+		lamp3 : out bit;
+		lamp4 : out bit;
+		d : in bit;
+		clk : in bit;
+		q : inout bit_vector(25 downto 0);
+		
+	);
+	end home_auto1;
+	
+	architecture hardware of home_auto1 is
+	signal q_signal : bit_vector( 25 downto 0) := "000000000000000000000000000";
+	signal counter : integer := 26;
+	
+	signal control_1 : integer := 0;
+   signal control_2 : integer := 1;
+		
+	begin
+	
+----------------------------
+	rx_process : process
+	begin
+	
+	wait until d'event and d='1' and control_1/=control_2;
+		
+		control_1<= control_1 + 1;
+					
+	end process rx_process;
+----------------------------
+	clk_process : process(clk)
+	
+	variable prd : integer := 5208;
+	
+	begin	
+		
+		if(clk'event and clk='1' and control_1=control_2) then
+			prd := prd - 1;
+			
+			if(prd=0) then
+				prd:=5208;
+			end if;
+			
+			if(prd = 2604) then
+				
+					q_signal(25)<=d;
+					q_signal(24)<=q_signal(25);
+					q_signal(23)<=q_signal(24);
+					q_signal(22)<=q_signal(23);
+					q_signal(21)<=q_signal(22);
+					q_signal(20)<=q_signal(21);
+					q_signal(19)<=q_signal(20);
+					q_signal(18)<=q_signal(19);
+					q_signal(17)<=q_signal(18);
+					q_signal(16)<=q_signal(17);
+					q_signal(15)<=q_signal(16);
+					q_signal(14)<=q_signal(15);
+					q_signal(13)<=q_signal(14);
+					q_signal(12)<=q_signal(13);
+					q_signal(11)<=q_signal(12);
+					q_signal(10)<=q_signal(11);
+					q_signal(9)<=q_signal(10);
+					q_signal(8)<=q_signal(9);
+					q_signal(7)<=q_signal(8);
+					q_signal(6)<=q_signal(7);
+					q_signal(5)<=q_signal(6);
+					q_signal(4)<=q_signal(5);
+					q_signal(3)<=q_signal(4);
+					q_signal(2)<=q_signal(3);
+					q_signal(1)<=q_signal(2);
+					q_signal(0)<=q_signal(1);
+					
+				counter <= counter -1;
+			
+				if(counter=0) then 
+					control_2<= control_2 +1;
+					counter<=26;
+					
+				end if;
+			end if;
+		end if;
+				
+	end process clk_process;
+----------------------------
+	q_process : process(counter)
+	
+	begin
+	
+			if(counter=0) then
+			q <=  q_signal;
+			
+			
+			end if;
+					
+	end process q_process;
+----------------------------
+
+end hardware;

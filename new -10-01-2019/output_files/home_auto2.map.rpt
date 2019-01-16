@@ -1,0 +1,918 @@
+Analysis & Synthesis report for home_auto2
+Wed Jan 16 21:27:39 2019
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jan 16 21:27:39 2019      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; home_auto2                                 ;
+; Top-level Entity Name              ; home_auto2                                 ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 532                                        ;
+;     Total combinational functions  ; 404                                        ;
+;     Dedicated logic registers      ; 256                                        ;
+; Total registers                    ; 256                                        ;
+; Total pins                         ; 137                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; home_auto2         ; home_auto2         ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; home_auto2.vhd                   ; yes             ; User VHDL File  ; C:/Users/Apolo/Documents/new -10-01-2019/home_auto2.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 532   ;
+;                                             ;       ;
+; Total combinational functions               ; 404   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 97    ;
+;     -- 3 input functions                    ; 138   ;
+;     -- <=2 input functions                  ; 169   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 282   ;
+;     -- arithmetic mode                      ; 122   ;
+;                                             ;       ;
+; Total registers                             ; 256   ;
+;     -- Dedicated logic registers            ; 256   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 137   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 224   ;
+; Total fan-out                               ; 2031  ;
+; Average fan-out                             ; 2.55  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |home_auto2                ; 404 (404)         ; 256 (256)    ; 0           ; 0            ; 0       ; 0         ; 137  ; 0            ; |home_auto2         ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; lamp1$latch                                          ; GND                 ; yes                    ;
+; lamp2$latch                                          ; GND                 ; yes                    ;
+; q[0]$latch                                           ; Equal3              ; yes                    ;
+; q[1]$latch                                           ; Equal3              ; yes                    ;
+; q[2]$latch                                           ; Equal3              ; yes                    ;
+; q[3]$latch                                           ; Equal3              ; yes                    ;
+; q[4]$latch                                           ; Equal3              ; yes                    ;
+; q[5]$latch                                           ; Equal3              ; yes                    ;
+; q[6]$latch                                           ; Equal3              ; yes                    ;
+; q[7]$latch                                           ; Equal3              ; yes                    ;
+; q[8]$latch                                           ; Equal3              ; yes                    ;
+; q[9]$latch                                           ; Equal3              ; yes                    ;
+; q[10]$latch                                          ; Equal3              ; yes                    ;
+; q[11]$latch                                          ; Equal3              ; yes                    ;
+; q[12]$latch                                          ; Equal3              ; yes                    ;
+; q[13]$latch                                          ; Equal3              ; yes                    ;
+; q[14]$latch                                          ; Equal3              ; yes                    ;
+; q[15]$latch                                          ; Equal3              ; yes                    ;
+; q[16]$latch                                          ; Equal3              ; yes                    ;
+; q[17]$latch                                          ; Equal3              ; yes                    ;
+; q[18]$latch                                          ; Equal3              ; yes                    ;
+; q[19]$latch                                          ; Equal3              ; yes                    ;
+; q[20]$latch                                          ; Equal3              ; yes                    ;
+; q[21]$latch                                          ; Equal3              ; yes                    ;
+; q[22]$latch                                          ; Equal3              ; yes                    ;
+; q[23]$latch                                          ; Equal3              ; yes                    ;
+; q[24]$latch                                          ; Equal3              ; yes                    ;
+; q[25]$latch                                          ; Equal3              ; yes                    ;
+; q[26]$latch                                          ; Equal3              ; yes                    ;
+; q[27]$latch                                          ; Equal3              ; yes                    ;
+; q[28]$latch                                          ; Equal3              ; yes                    ;
+; q[29]$latch                                          ; Equal3              ; yes                    ;
+; q[30]$latch                                          ; Equal3              ; yes                    ;
+; q[31]$latch                                          ; Equal3              ; yes                    ;
+; q[32]$latch                                          ; Equal3              ; yes                    ;
+; q[33]$latch                                          ; Equal3              ; yes                    ;
+; q[34]$latch                                          ; Equal3              ; yes                    ;
+; q[35]$latch                                          ; Equal3              ; yes                    ;
+; q[36]$latch                                          ; Equal3              ; yes                    ;
+; q[37]$latch                                          ; Equal3              ; yes                    ;
+; q[38]$latch                                          ; Equal3              ; yes                    ;
+; q[39]$latch                                          ; Equal3              ; yes                    ;
+; q[40]$latch                                          ; Equal3              ; yes                    ;
+; q[41]$latch                                          ; Equal3              ; yes                    ;
+; q[42]$latch                                          ; Equal3              ; yes                    ;
+; q[43]$latch                                          ; Equal3              ; yes                    ;
+; q[44]$latch                                          ; Equal3              ; yes                    ;
+; q[45]$latch                                          ; Equal3              ; yes                    ;
+; q[46]$latch                                          ; Equal3              ; yes                    ;
+; q[47]$latch                                          ; Equal3              ; yes                    ;
+; q[48]$latch                                          ; Equal3              ; yes                    ;
+; q[49]$latch                                          ; Equal3              ; yes                    ;
+; q[50]$latch                                          ; Equal3              ; yes                    ;
+; q[51]$latch                                          ; Equal3              ; yes                    ;
+; q[52]$latch                                          ; Equal3              ; yes                    ;
+; q[53]$latch                                          ; Equal3              ; yes                    ;
+; q[54]$latch                                          ; Equal3              ; yes                    ;
+; q[55]$latch                                          ; Equal3              ; yes                    ;
+; q[56]$latch                                          ; Equal3              ; yes                    ;
+; q[57]$latch                                          ; Equal3              ; yes                    ;
+; q[58]$latch                                          ; Equal3              ; yes                    ;
+; q[59]$latch                                          ; Equal3              ; yes                    ;
+; q[60]$latch                                          ; Equal3              ; yes                    ;
+; q[61]$latch                                          ; Equal3              ; yes                    ;
+; q[62]$latch                                          ; Equal3              ; yes                    ;
+; q[63]$latch                                          ; Equal3              ; yes                    ;
+; q[64]$latch                                          ; Equal3              ; yes                    ;
+; q[65]$latch                                          ; Equal3              ; yes                    ;
+; q[66]$latch                                          ; Equal3              ; yes                    ;
+; q[67]$latch                                          ; Equal3              ; yes                    ;
+; q[68]$latch                                          ; Equal3              ; yes                    ;
+; q[69]$latch                                          ; Equal3              ; yes                    ;
+; q[70]$latch                                          ; Equal3              ; yes                    ;
+; q[71]$latch                                          ; Equal3              ; yes                    ;
+; q[72]$latch                                          ; Equal3              ; yes                    ;
+; q[73]$latch                                          ; Equal3              ; yes                    ;
+; q[74]$latch                                          ; Equal3              ; yes                    ;
+; q[75]$latch                                          ; Equal3              ; yes                    ;
+; q[76]$latch                                          ; Equal3              ; yes                    ;
+; q[77]$latch                                          ; Equal3              ; yes                    ;
+; q[78]$latch                                          ; Equal3              ; yes                    ;
+; q[79]$latch                                          ; Equal3              ; yes                    ;
+; q[80]$latch                                          ; Equal3              ; yes                    ;
+; q[81]$latch                                          ; Equal3              ; yes                    ;
+; q[82]$latch                                          ; Equal3              ; yes                    ;
+; q[83]$latch                                          ; Equal3              ; yes                    ;
+; q[84]$latch                                          ; Equal3              ; yes                    ;
+; q[85]$latch                                          ; Equal3              ; yes                    ;
+; q[86]$latch                                          ; Equal3              ; yes                    ;
+; q[87]$latch                                          ; Equal3              ; yes                    ;
+; q[88]$latch                                          ; Equal3              ; yes                    ;
+; q[89]$latch                                          ; Equal3              ; yes                    ;
+; q[90]$latch                                          ; Equal3              ; yes                    ;
+; q[91]$latch                                          ; Equal3              ; yes                    ;
+; q[92]$latch                                          ; Equal3              ; yes                    ;
+; q[93]$latch                                          ; Equal3              ; yes                    ;
+; q[94]$latch                                          ; Equal3              ; yes                    ;
+; q[95]$latch                                          ; Equal3              ; yes                    ;
+; q[96]$latch                                          ; Equal3              ; yes                    ;
+; q[97]$latch                                          ; Equal3              ; yes                    ;
+; Number of user-specified and inferred latches = 130  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 256   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 254   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; counter[7]                             ; 2       ;
+; \clk_process:prd[6]                    ; 1       ;
+; \clk_process:prd[4]                    ; 1       ;
+; \clk_process:prd[3]                    ; 1       ;
+; control_2[0]                           ; 3       ;
+; \clk_process:prd[10]                   ; 1       ;
+; \clk_process:prd[12]                   ; 1       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Wed Jan 16 21:27:37 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off home_auto2 -c home_auto2
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file home_auto2.vhd
+    Info (12022): Found design unit 1: home_auto2-hardware
+    Info (12023): Found entity 1: home_auto2
+Info (12127): Elaborating entity "home_auto2" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at home_auto2.vhd(9): used implicit default value for signal "lamp3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at home_auto2.vhd(10): used implicit default value for signal "lamp4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10540): VHDL Signal Declaration warning at home_auto2.vhd(12): used explicit default value for signal "ar1" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at home_auto2.vhd(13): used explicit default value for signal "ar2" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at home_auto2.vhd(14): used explicit default value for signal "ar3" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at home_auto2.vhd(49): signal "control_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at home_auto2.vhd(49): signal "control_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at home_auto2.vhd(206): signal "q_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at home_auto2.vhd(201): inferring latch(es) for signal or variable "q", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at home_auto2.vhd(213): inferring latch(es) for signal or variable "lamp1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at home_auto2.vhd(213): inferring latch(es) for signal or variable "lamp2", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "lamp2" at home_auto2.vhd(213)
+Info (10041): Inferred latch for "lamp1" at home_auto2.vhd(213)
+Info (10041): Inferred latch for "q[0]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[1]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[2]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[3]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[4]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[5]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[6]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[7]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[8]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[9]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[10]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[11]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[12]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[13]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[14]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[15]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[16]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[17]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[18]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[19]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[20]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[21]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[22]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[23]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[24]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[25]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[26]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[27]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[28]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[29]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[30]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[31]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[32]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[33]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[34]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[35]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[36]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[37]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[38]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[39]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[40]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[41]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[42]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[43]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[44]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[45]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[46]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[47]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[48]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[49]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[50]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[51]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[52]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[53]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[54]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[55]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[56]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[57]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[58]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[59]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[60]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[61]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[62]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[63]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[64]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[65]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[66]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[67]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[68]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[69]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[70]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[71]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[72]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[73]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[74]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[75]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[76]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[77]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[78]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[79]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[80]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[81]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[82]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[83]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[84]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[85]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[86]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[87]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[88]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[89]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[90]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[91]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[92]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[93]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[94]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[95]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[96]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[97]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[98]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[99]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[100]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[101]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[102]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[103]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[104]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[105]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[106]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[107]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[108]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[109]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[110]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[111]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[112]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[113]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[114]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[115]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[116]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[117]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[118]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[119]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[120]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[121]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[122]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[123]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[124]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[125]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[126]" at home_auto2.vhd(201)
+Info (10041): Inferred latch for "q[127]" at home_auto2.vhd(201)
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[3]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[4]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[5]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[6]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[7]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[8]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[9]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[10]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[11]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[12]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[13]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[14]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[15]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[16]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[17]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[18]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[19]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[20]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[21]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[22]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[23]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[24]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[25]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[26]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[27]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[28]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[29]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[30]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[31]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[32]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[33]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[34]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[35]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[36]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[37]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[38]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[39]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[40]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[41]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[42]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[43]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[44]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[45]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[46]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[47]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[48]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[49]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[50]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[51]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[52]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[53]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[54]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[55]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[56]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[57]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[58]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[59]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[60]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[61]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[62]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[63]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[64]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[65]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[66]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[67]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[68]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[69]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[70]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[71]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[72]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[73]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[74]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[75]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[76]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[77]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[78]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[79]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[80]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[81]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[82]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[83]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[84]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[85]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[86]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[87]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[88]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[89]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[90]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[91]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[92]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[93]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[94]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[95]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[96]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[97]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[98]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[99]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[100]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[101]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[102]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[103]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[104]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[105]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[106]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[107]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[108]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[109]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[110]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[111]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[112]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[113]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[114]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[115]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[116]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[117]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[118]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[119]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[120]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[121]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[122]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[123]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[124]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[125]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[126]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "q[127]" and its non-tri-state driver.
+Info (13060): One or more bidirs are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[0]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[1]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[2]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[3]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[4]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[5]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[6]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[7]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[8]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[9]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[10]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[11]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[12]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[13]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[14]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[15]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[16]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[17]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[18]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[19]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[20]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[21]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[22]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[23]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[24]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[25]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[26]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[27]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[28]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[29]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[30]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[31]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[32]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[33]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[34]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[35]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[36]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[37]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[38]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[39]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[40]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[41]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[42]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[43]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[44]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[45]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[46]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[47]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[48]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[49]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[50]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[51]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[52]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[53]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[54]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[55]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[56]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[57]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[58]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[59]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[60]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[61]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[62]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[63]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[64]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[65]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[66]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[67]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[68]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[69]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[70]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[71]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[72]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[73]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[74]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[75]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[76]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[77]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[78]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[79]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[80]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[81]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[82]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[83]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[84]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[85]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[86]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[87]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[88]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[89]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[90]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[91]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[92]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[93]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[94]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[95]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[96]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[97]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[98]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[99]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[100]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[101]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[102]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[103]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[104]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[105]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[106]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[107]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[108]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[109]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[110]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[111]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[112]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[113]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[114]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[115]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[116]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[117]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[118]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[119]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[120]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[121]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[122]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[123]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[124]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[125]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[126]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "q[127]" is moved to its source
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "q[0]~synth"
+    Warning (13010): Node "q[1]~synth"
+    Warning (13010): Node "q[2]~synth"
+    Warning (13010): Node "q[3]~synth"
+    Warning (13010): Node "q[4]~synth"
+    Warning (13010): Node "q[5]~synth"
+    Warning (13010): Node "q[6]~synth"
+    Warning (13010): Node "q[7]~synth"
+    Warning (13010): Node "q[8]~synth"
+    Warning (13010): Node "q[9]~synth"
+    Warning (13010): Node "q[10]~synth"
+    Warning (13010): Node "q[11]~synth"
+    Warning (13010): Node "q[12]~synth"
+    Warning (13010): Node "q[13]~synth"
+    Warning (13010): Node "q[14]~synth"
+    Warning (13010): Node "q[15]~synth"
+    Warning (13010): Node "q[16]~synth"
+    Warning (13010): Node "q[17]~synth"
+    Warning (13010): Node "q[18]~synth"
+    Warning (13010): Node "q[19]~synth"
+    Warning (13010): Node "q[20]~synth"
+    Warning (13010): Node "q[21]~synth"
+    Warning (13010): Node "q[22]~synth"
+    Warning (13010): Node "q[23]~synth"
+    Warning (13010): Node "q[24]~synth"
+    Warning (13010): Node "q[25]~synth"
+    Warning (13010): Node "q[26]~synth"
+    Warning (13010): Node "q[27]~synth"
+    Warning (13010): Node "q[28]~synth"
+    Warning (13010): Node "q[29]~synth"
+    Warning (13010): Node "q[30]~synth"
+    Warning (13010): Node "q[31]~synth"
+    Warning (13010): Node "q[32]~synth"
+    Warning (13010): Node "q[33]~synth"
+    Warning (13010): Node "q[34]~synth"
+    Warning (13010): Node "q[35]~synth"
+    Warning (13010): Node "q[36]~synth"
+    Warning (13010): Node "q[37]~synth"
+    Warning (13010): Node "q[38]~synth"
+    Warning (13010): Node "q[39]~synth"
+    Warning (13010): Node "q[40]~synth"
+    Warning (13010): Node "q[41]~synth"
+    Warning (13010): Node "q[42]~synth"
+    Warning (13010): Node "q[43]~synth"
+    Warning (13010): Node "q[44]~synth"
+    Warning (13010): Node "q[45]~synth"
+    Warning (13010): Node "q[46]~synth"
+    Warning (13010): Node "q[47]~synth"
+    Warning (13010): Node "q[48]~synth"
+    Warning (13010): Node "q[49]~synth"
+    Warning (13010): Node "q[50]~synth"
+    Warning (13010): Node "q[51]~synth"
+    Warning (13010): Node "q[52]~synth"
+    Warning (13010): Node "q[53]~synth"
+    Warning (13010): Node "q[54]~synth"
+    Warning (13010): Node "q[55]~synth"
+    Warning (13010): Node "q[56]~synth"
+    Warning (13010): Node "q[57]~synth"
+    Warning (13010): Node "q[58]~synth"
+    Warning (13010): Node "q[59]~synth"
+    Warning (13010): Node "q[60]~synth"
+    Warning (13010): Node "q[61]~synth"
+    Warning (13010): Node "q[62]~synth"
+    Warning (13010): Node "q[63]~synth"
+    Warning (13010): Node "q[64]~synth"
+    Warning (13010): Node "q[65]~synth"
+    Warning (13010): Node "q[66]~synth"
+    Warning (13010): Node "q[67]~synth"
+    Warning (13010): Node "q[68]~synth"
+    Warning (13010): Node "q[69]~synth"
+    Warning (13010): Node "q[70]~synth"
+    Warning (13010): Node "q[71]~synth"
+    Warning (13010): Node "q[72]~synth"
+    Warning (13010): Node "q[73]~synth"
+    Warning (13010): Node "q[74]~synth"
+    Warning (13010): Node "q[75]~synth"
+    Warning (13010): Node "q[76]~synth"
+    Warning (13010): Node "q[77]~synth"
+    Warning (13010): Node "q[78]~synth"
+    Warning (13010): Node "q[79]~synth"
+    Warning (13010): Node "q[80]~synth"
+    Warning (13010): Node "q[81]~synth"
+    Warning (13010): Node "q[82]~synth"
+    Warning (13010): Node "q[83]~synth"
+    Warning (13010): Node "q[84]~synth"
+    Warning (13010): Node "q[85]~synth"
+    Warning (13010): Node "q[86]~synth"
+    Warning (13010): Node "q[87]~synth"
+    Warning (13010): Node "q[88]~synth"
+    Warning (13010): Node "q[89]~synth"
+    Warning (13010): Node "q[90]~synth"
+    Warning (13010): Node "q[91]~synth"
+    Warning (13010): Node "q[92]~synth"
+    Warning (13010): Node "q[93]~synth"
+    Warning (13010): Node "q[94]~synth"
+    Warning (13010): Node "q[95]~synth"
+    Warning (13010): Node "q[96]~synth"
+    Warning (13010): Node "q[97]~synth"
+    Warning (13010): Node "q[98]~synth"
+    Warning (13010): Node "q[99]~synth"
+    Warning (13010): Node "q[100]~synth"
+    Warning (13010): Node "q[101]~synth"
+    Warning (13010): Node "q[102]~synth"
+    Warning (13010): Node "q[103]~synth"
+    Warning (13010): Node "q[104]~synth"
+    Warning (13010): Node "q[105]~synth"
+    Warning (13010): Node "q[106]~synth"
+    Warning (13010): Node "q[107]~synth"
+    Warning (13010): Node "q[108]~synth"
+    Warning (13010): Node "q[109]~synth"
+    Warning (13010): Node "q[110]~synth"
+    Warning (13010): Node "q[111]~synth"
+    Warning (13010): Node "q[112]~synth"
+    Warning (13010): Node "q[113]~synth"
+    Warning (13010): Node "q[114]~synth"
+    Warning (13010): Node "q[115]~synth"
+    Warning (13010): Node "q[116]~synth"
+    Warning (13010): Node "q[117]~synth"
+    Warning (13010): Node "q[118]~synth"
+    Warning (13010): Node "q[119]~synth"
+    Warning (13010): Node "q[120]~synth"
+    Warning (13010): Node "q[121]~synth"
+    Warning (13010): Node "q[122]~synth"
+    Warning (13010): Node "q[123]~synth"
+    Warning (13010): Node "q[124]~synth"
+    Warning (13010): Node "q[125]~synth"
+    Warning (13010): Node "q[126]~synth"
+    Warning (13010): Node "q[127]~synth"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lamp3" is stuck at GND
+    Warning (13410): Pin "lamp4" is stuck at GND
+    Warning (13410): Pin "ar1" is stuck at GND
+    Warning (13410): Pin "ar2" is stuck at GND
+    Warning (13410): Pin "ar3" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 696 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 7 output pins
+    Info (21060): Implemented 128 bidirectional pins
+    Info (21061): Implemented 559 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 276 warnings
+    Info: Peak virtual memory: 4668 megabytes
+    Info: Processing ended: Wed Jan 16 21:27:39 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
